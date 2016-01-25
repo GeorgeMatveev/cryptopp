@@ -932,7 +932,7 @@ inline void IncrementCounterByOne(byte *output, const byte *input, unsigned int 
 	
 	int i, carry;
 	for (i=int(size-1), carry=1; i>=0 && carry; i--)
-		carry = ((output[i] = input[i]+1) == 0);
+		carry = ((output[i] = input[i+1]) == 0);
 	memcpy_s(output, size, input, i+1);
 }
 
